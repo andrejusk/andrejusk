@@ -20,3 +20,13 @@ Follow to stay in touch!
 <a href="https://github.com/andrejusk/pixel">
   <img src="https://pixel.andrejus.dev/pixels?color=2CB49400&size=1&ticker=andrejusk-profile" />
 </a>
+
+#### Profile stats
+
+<!-- Total count outlet -->
+<!-- Block outlet -->
+
+<details>
+  <summary>What is this?</summary>
+  <!-- Explainer outlet -->
+</details>
