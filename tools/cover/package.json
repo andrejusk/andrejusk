@@ -1,0 +1,13 @@
+{
+  "name": "andrejusk-cover",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Builds assets/cover.svg for the andrejusk profile README.",
+  "scripts": {
+    "build": "node build.mjs"
+  },
+  "dependencies": {
+    "opentype.js": "^2.0.0"
+  }
+}

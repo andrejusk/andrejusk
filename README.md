@@ -1,22 +1,22 @@
-<div>
-  <a href="https://linkedin.com/in/andrejusk">
-    <img src="https://shields.io/badge/LinkedIn-0A66C2?logo=LinkedIn&style=for-the-badge" alt="LinkedIn" />
-  </a>
-  
-  <a href="https://codepen.io/andrejusk">
-    <img src="https://shields.io/badge/CodePen-000000?logo=CodePen&style=for-the-badge" alt="CodePen" />
-  </a>
-  
-  <a href="https://codesandbox.io/u/andrejusk">
-    <img src="https://shields.io/badge/CodeSandbox-151515?logo=CodeSandbox&style=for-the-badge" alt="CodeSandbox" />
-  </a>
-</div>
+<!-- Cover is generated — see tools/cover (`npm run build`), rebuilt on push & weekly
+     by .github/workflows/cover.yml. The card's content also lives in the image `alt`
+     for accessibility (an <img>-embedded SVG exposes only its alt to assistive tech).
+     The name is intentionally omitted — it's on the profile. -->
 
-### Hi there 👋
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="assets/cover-dark.svg" />
+    <source media="(prefers-color-scheme: light)" srcset="assets/cover-light.svg" />
+    <img src="assets/cover-dark.svg" width="100%"
+         alt="Andrejus — Software Engineer at GitHub. I build developer tools and accessible interfaces. Focus: web, platform, accessibility. Interests: AI agents, MCP tools, productivity software. Languages: TypeScript, Ruby, Python. 12 years on GitHub. Recent profile visits shown as a sparkline." />
+  </picture>
+</p>
 
-Check out my top open-source [projects](https://github.com/andrejusk?tab=repositories&sort=stargazers)
-and curated [lists](https://github.com/andrejusk?tab=stars) ⭐✨.
-Follow to stay in touch!
-<a href="https://github.com/andrejusk/pixel">
-  <img src="https://pixel.andrejus.dev/pixels?color=2CB49400&size=1&ticker=andrejusk-profile" />
-</a>
+<p align="center">
+  <a href="https://github.com/andrejusk?tab=repositories&sort=stargazers">projects</a> &nbsp;·&nbsp;
+  <a href="https://github.com/andrejusk?tab=stars">curated stars ⭐</a> &nbsp;·&nbsp;
+  <a href="https://github.com/andrejusk/dotfiles">dotfiles</a>
+</p>
+
+<!-- invisible tracking pixel — statistics display to come later -->
+<img src="https://pixel.andrejus.dev/pixels?color=2CB49400&size=1&ticker=andrejusk-profile" alt="" width="1" height="1" />

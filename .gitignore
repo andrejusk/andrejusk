@@ -1,0 +1,4 @@
+node_modules/
+
+# visits data is fetched live at build time, never committed
+tools/cover/visits.json
