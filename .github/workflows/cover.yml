@@ -43,12 +43,12 @@ jobs:
 
       - name: Commit if changed
         run: |
-          if git diff --quiet -- assets/; then
+          if git diff --quiet -- assets/ README.md; then
             echo "covers are up to date."
           else
             git config user.name "github-actions[bot]"
             git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-            git add assets/cover-dark.svg assets/cover-light.svg
+            git add assets/cover-dark.svg assets/cover-light.svg README.md
             git commit -m "chore: rebuild covers [skip ci]"
             git push
           fi

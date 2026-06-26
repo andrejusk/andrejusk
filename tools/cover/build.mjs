@@ -180,6 +180,26 @@ ${newPrompt}
 `;
 }
 
+// the cover is an <img>-embedded SVG, so only the <img alt> reaches assistive tech;
+// build that alt (including the live visits stat) and write it into the README so the
+// screen-reader description stays in sync with the card.
+function altText(v) {
+  const stat = v ? ` Profile visits: ${v.recent.toLocaleString('en-US')} in the last ${MONTHS} months.` : '';
+  return (
+    'Andrejus — Software Engineer at GitHub. ' +
+    'I build developer tools and accessible interfaces. ' +
+    'Focus: web, platform, accessibility. ' +
+    'Interests: AI agents, MCP tools, productivity software. ' +
+    'Languages: TypeScript, Ruby, Python. 12 years on GitHub.' + stat
+  );
+}
+function updateReadmeAlt(alt) {
+  const readme = join(HERE, '..', '..', 'README.md');
+  const md = readFileSync(readme, 'utf8');
+  const next = md.replace(/(<img\s+src="assets\/cover-dark\.svg"[\s\S]*?\balt=")[^"]*(")/, (_m, a, b) => a + alt + b);
+  if (next !== md) writeFileSync(readme, next);
+}
+
 const visits = await fetchVisits();
 if (!visits && process.env.COVER_REQUIRE_VISITS) {
   throw new Error('visits data required but unavailable — refusing to overwrite the cover');
@@ -190,3 +210,4 @@ for (const theme of ['dark', 'light']) {
   writeFileSync(file, buildCover(theme, visits));
   console.log('wrote', file, visits ? `(visits: ${visits.recent} over ${WEEKS}w)` : '(no visits)');
 }
+if (visits) updateReadmeAlt(altText(visits));

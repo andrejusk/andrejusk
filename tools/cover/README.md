@@ -27,6 +27,9 @@ npm run build      # writes ../../assets/cover-{dark,light}.svg
   fetched **live at build time** from the public `pixel.andrejus.dev` `/ticker` API. No
   data is committed; it degrades to nothing if the fetch fails (set `$COVER_VISITS_FILE`
   to a JSON snapshot to build offline, or `$COVER_REQUIRE_VISITS=1` to fail instead).
+- An `<img>`-embedded SVG exposes only its `alt` to assistive tech, so the build also
+  writes the card's description — including the live visits stat — into the cover `<img>`
+  `alt` in the top-level `README.md`, keeping the screen-reader text in sync.
 
 ## CI
 
