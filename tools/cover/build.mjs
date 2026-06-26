@@ -24,7 +24,6 @@ const out = (name) => join(HERE, '..', '..', 'assets', name);
 
 const load = (p) => { const b = readFileSync(p); return opentype.parse(b.buffer.slice(b.byteOffset, b.byteOffset + b.byteLength)); };
 const med = load(FONT('FiraMono-Medium.ttf'));
-const bold = load(FONT('FiraMono-Bold.ttf'));
 
 // official GitHub :octocat: emoji (githubassets), embedded as a base64 data URI.
 const octocatURI = 'data:image/png;base64,' + readFileSync(join(HERE, 'octocat.png')).toString('base64');
@@ -99,7 +98,7 @@ function buildCover(theme, visits) {
   const size = 19, cw = adv(med, size);
   const rs = 18, rcw = adv(med, rs);
   const tx = 40;
-  const prompt = '~/andrejusk';
+  const prompt = '~';
   const lamI = prompt.length + 1;
   const cmdX = tx + (lamI + 2) * cw;
   const promptLine = (y) => T(med, prompt, tx, y, size, C.teal) + T(med, 'λ', tx + lamI * cw, y, size, C.teal);
@@ -155,7 +154,7 @@ function buildCover(theme, visits) {
   const logoLH = 35;
   const logoStart = Math.round((gyTag - 18 + infoBottom) / 2 - (logo.length * logoLH) / 2 + 20);
   let logoSvg = '';
-  logo.forEach((ln, i) => { logoSvg += T(bold, ln, tx, logoStart + i * logoLH, 30, C.teal); });
+  logo.forEach((ln, i) => { logoSvg += T(med, ln, tx, logoStart + i * logoLH, 30, C.teal); });
 
   // fresh prompt + blinking cursor — the only animation (CSS, reduced-motion aware)
   const y3 = infoBottom + 36;

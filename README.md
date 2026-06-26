@@ -14,9 +14,8 @@
 
 <p align="center">
   <a href="https://github.com/andrejusk?tab=repositories&sort=stargazers">projects</a> &nbsp;·&nbsp;
-  <a href="https://github.com/andrejusk?tab=stars">curated stars ⭐</a> &nbsp;·&nbsp;
+  <a href="https://github.com/andrejusk?tab=stars">stars ⭐</a> &nbsp;·&nbsp;
   <a href="https://github.com/andrejusk/dotfiles">dotfiles</a>
+  <!-- invisible visit tracker — feeds the visits sparkline -->
+  <img src="https://pixel.andrejus.dev/pixels?color=2CB49400&size=1&ticker=andrejusk-profile" alt="" width="1" height="1" />
 </p>
-
-<!-- invisible tracking pixel — statistics display to come later -->
-<img src="https://pixel.andrejus.dev/pixels?color=2CB49400&size=1&ticker=andrejusk-profile" alt="" width="1" height="1" />

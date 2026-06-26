@@ -38,7 +38,7 @@ the bottom of the profile README — each profile view ticks the series the spar
 
 ## Fonts
 
-Bundled in `fonts/`: Fira Mono (OFL), Medium + Bold weights. The `uptime` row can be
+Bundled in `fonts/`: Fira Mono (OFL), Medium weight. The `uptime` row can be
 made dynamic by setting `$COVER_UPTIME` in CI. To refresh the fonts, run `./fonts.sh`
 (needs `curl`).
 
