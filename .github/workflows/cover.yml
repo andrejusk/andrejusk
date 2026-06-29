@@ -12,7 +12,10 @@ on:
       - "tools/cover/**"
       - ".github/workflows/cover.yml"
   schedule:
-    - cron: "27 6 * * 1" # weekly (Mon 06:27 UTC) — refresh visits
+    # the /ticker visit buckets are 7 days aligned to Thursday 00:00 UTC, so the
+    # 13-complete-week window only changes after a Thursday. Rebuild just after that
+    # boundary so a freshly-completed week shows up promptly (instead of next Monday).
+    - cron: "30 0 * * 4" # weekly (Thu 00:30 UTC) — just after the visit bucket rolls
   workflow_dispatch:
 
 permissions:
