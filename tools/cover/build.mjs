@@ -92,6 +92,12 @@ function sparkChars(values) {
   return values.map((v) => TICKS[Math.round(((v - min) / range) * (TICKS.length - 1))]).join('');
 }
 
+// account age is computed from the (fixed) join date, so the uptime row never goes
+// stale — it ticks over on its own each year. $COVER_UPTIME still overrides if set.
+const JOINED = '2014-04-24'; // andrejusk joined GitHub
+const ACCOUNT_YEARS = Math.floor((Date.now() - Date.parse(JOINED)) / (365.25 * 24 * 3600 * 1000));
+const UPTIME = process.env.COVER_UPTIME ?? `${ACCOUNT_YEARS} yrs on GitHub`;
+
 // ---------------------------------------------------------------- the cover --
 function buildCover(theme, visits) {
   const C = THEMES[theme];
@@ -116,7 +122,7 @@ function buildCover(theme, visits) {
   ];
   const groupB = [
     ['langs',  'TypeScript · Ruby · Python'],
-    ['uptime', process.env.COVER_UPTIME ?? '12 yrs on GitHub'],
+    ['uptime', UPTIME],
   ];
   const row = (k, val, ry) => T(med, k, gx, ry, rs, C.blue) + T(med, val, kx, ry, rs, C.text);
 
@@ -168,7 +174,7 @@ function buildCover(theme, visits) {
   @keyframes blink{0%,50%{opacity:1}50.01%,100%{opacity:0}}
   @media (prefers-reduced-motion:reduce){.cur{animation:none}}
 </style>`;
-  return `<svg xmlns="http://www.w3.org/2000/svg" width="${w}" height="${h}" viewBox="0 0 ${w} ${h}" font-family="Fira Mono" role="img">
+  return `<svg xmlns="http://www.w3.org/2000/svg" width="${w}" height="${h}" viewBox="0 0 ${w} ${h}" font-family="Fira Mono" role="img" xml:lang="en" focusable="false">
 <title>Andrejus — Software Engineer at GitHub. I build developer tools and accessible interfaces.</title>
 ${style}
 ${windowBg}
@@ -190,7 +196,7 @@ function altText(v) {
     'I build developer tools and accessible interfaces. ' +
     'Focus: web, platform, accessibility. ' +
     'Interests: AI agents, MCP tools, productivity software. ' +
-    'Languages: TypeScript, Ruby, Python. 12 years on GitHub.' + stat
+    `Languages: TypeScript, Ruby, Python. ${ACCOUNT_YEARS} years on GitHub.` + stat
   );
 }
 function updateReadmeAlt(alt) {

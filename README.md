@@ -10,12 +10,6 @@
     <img src="assets/cover-dark.svg" width="100%"
          alt="Andrejus — Software Engineer at GitHub. I build developer tools and accessible interfaces. Focus: web, platform, accessibility. Interests: AI agents, MCP tools, productivity software. Languages: TypeScript, Ruby, Python. 12 years on GitHub. Profile visits: 570 in the last 3 months." />
   </picture>
-</p>
-
-<p align="center">
-  <a href="https://github.com/andrejusk?tab=repositories&sort=stargazers">projects</a> &nbsp;·&nbsp;
-  <a href="https://github.com/andrejusk?tab=stars">stars ⭐</a> &nbsp;·&nbsp;
-  <a href="https://github.com/andrejusk/dotfiles">dotfiles</a>
-  <!-- invisible visit tracker — feeds the visits sparkline -->
-  <img src="https://pixel.andrejus.dev/pixels?color=2CB49400&size=1&ticker=andrejusk-profile" alt="" width="1" height="1" />
+  <!-- invisible visit tracker — float=right so it adds no layout line; feeds the sparkline -->
+  <img src="https://pixel.andrejus.dev/pixels?color=2CB49400&size=1&ticker=andrejusk-profile" align="right" alt="" width="1" height="1" />
 </p>
