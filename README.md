@@ -8,7 +8,7 @@
     <source media="(prefers-color-scheme: dark)" srcset="assets/cover-dark.svg" />
     <source media="(prefers-color-scheme: light)" srcset="assets/cover-light.svg" />
     <img src="assets/cover-dark.svg" width="100%"
-         alt="Andrejus — Software Engineer at GitHub. I build developer tools and accessible interfaces. Focus: web, platform, accessibility. Interests: AI agents, MCP tools, productivity software. Languages: TypeScript, Ruby, Python. 12 years on GitHub. Profile visits: 570 in the last 3 months." />
+         alt="Andrejus — Software Engineer at GitHub. I build developer tools and accessible interfaces. Focus: web, platform, accessibility. Interests: AI agents, MCP tools, productivity software. Languages: TypeScript, Ruby, Python. 12 years on GitHub. Profile visits: 709 in the last 3 months." />
   </picture>
   <!-- invisible visit tracker — float=right so it adds no layout line; feeds the sparkline -->
   <img src="https://pixel.andrejus.dev/pixels?color=2CB49400&size=1&ticker=andrejusk-profile" align="right" alt="" width="1" height="1" />
