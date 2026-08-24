@@ -140,8 +140,9 @@ function buildCover(theme, visits) {
   // Fira Mono block glyphs, plus that window's visit count.
   if (visits) {
     const spark = sparkChars(visits.bars);
+    const sparkY = y + 4; // Fira Mono block glyphs sit above the cell boundary.
     info += T(med, 'visits', gx, y, rs, C.blue);
-    info += T(med, spark, kx, y, rs, C.teal);
+    info += T(med, spark, kx, sparkY, rs, C.teal);
     info += T(med, `${visits.recent.toLocaleString('en-US')} · weekly · last ${MONTHS}mo`, kx + (spark.length + 1) * rcw, y, rs, C.text);
     y += lh;
   }
@@ -167,8 +168,18 @@ function buildCover(theme, visits) {
   const cursor = `<rect class="cur" x="${cmdX}" y="${y3 - 16}" width="${cw.toFixed(1)}" height="22" fill="${C.text}"/>`;
   const newPrompt = promptLine(y3) + cursor;
 
-  const w = 970, h = y3 + 30;
-  const windowBg = `<rect x="0.5" y="0.5" width="${w - 1}" height="${h - 1}" rx="14" fill="${C.bg}" stroke="${C.stroke}"/>`;
+  const w = 970, h = y3 + 18;
+  // Align dots to the cover's text cells: both content columns land on the grid,
+  // with row spacing matching the key:value block's 25 px terminal rhythm.
+  const gridX = tx;
+  const gridY = y1 - size + 1;
+  const gridStepX = (gx - tx) / 12;
+  const gridStepY = lh;
+  const paperGrid = theme === 'light'
+    ? `<defs><pattern id="paper-dots" x="${gridX - gridStepX / 2}" y="${gridY - gridStepY / 2}" width="${gridStepX}" height="${gridStepY}" patternUnits="userSpaceOnUse"><circle cx="${gridStepX / 2}" cy="${gridStepY / 2}" r="0.85" fill="#C8C0AA" opacity="0.45"/></pattern></defs>`
+    : '';
+  const windowBg = `<rect x="0.5" y="0.5" width="${w - 1}" height="${h - 1}" rx="14" fill="${C.bg}" stroke="${C.stroke}"/>` +
+    (theme === 'light' ? `<rect x="8.5" y="8.5" width="${w - 17}" height="${h - 17}" rx="8" fill="url(#paper-dots)"/>` : '');
   const style = `<style>
   .cur{animation:blink 1.06s linear infinite}
   @keyframes blink{0%,50%{opacity:1}50.01%,100%{opacity:0}}
@@ -177,6 +188,7 @@ function buildCover(theme, visits) {
   return `<svg xmlns="http://www.w3.org/2000/svg" width="${w}" height="${h}" viewBox="0 0 ${w} ${h}" font-family="Fira Mono" role="img" xml:lang="en" focusable="false">
 <title>Andrejus — Software Engineer at GitHub. I build developer tools and accessible interfaces.</title>
 ${style}
+${paperGrid}
 ${windowBg}
 ${cmdLine}
 ${logoSvg}

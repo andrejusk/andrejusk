@@ -22,6 +22,8 @@ npm run build      # writes ../../assets/cover-{dark,light}.svg
   `build.mjs`.
 - Colours are the [dotfiles](https://github.com/andrejusk/dotfiles) `dots-dark` /
   `dots-light` palettes (from `~/.config/ghostty/themes`).
+- The light cover mirrors Ghostty's `paper.glsl` shader with the same warm paper
+  background and a graphite dot grid aligned to the cover's text columns and rows.
 - The `visits` row is a sparkline of the last ~3 months of profile visits (one Fira Mono
   block glyph per week, like a terminal `spark`) plus the visit count over that window,
   fetched **live at build time** from the public `pixel.andrejus.dev` `/ticker` API. No
